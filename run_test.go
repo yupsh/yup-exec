@@ -15,11 +15,11 @@ func TestRun(t *testing.T) {
 	cases := []struct {
 		name       string
 		version    string
-		args       []string
 		stdin      string
 		wantOut    string
-		wantCode   int
 		wantErrSub string
+		args       []string
+		wantCode   int
 	}{
 		{
 			name:    "tr uppercases stdin",

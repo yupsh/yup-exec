@@ -11,6 +11,8 @@ import (
 	"github.com/urfave/cli/v3"
 )
 
+const name = "exec"
+
 const (
 	flagWorkingDir   = "directory"
 	flagEnvVar       = "env"
@@ -51,7 +53,7 @@ func run(version string, args []string, stdin io.Reader, stdout, stderr io.Write
 	cmd.Writer = stdout
 	cmd.ErrWriter = stderr
 	if err := cmd.Run(context.Background(), args); err != nil {
-		_, _ = fmt.Fprintf(stderr, "exec: %v\n", err)
+		_, _ = fmt.Fprintf(stderr, name+": %v\n", err)
 		return 1
 	}
 	return 0
@@ -59,7 +61,7 @@ func run(version string, args []string, stdin io.Reader, stdout, stderr io.Write
 
 func newApp(version string, stdin io.Reader, stdout io.Writer) *cli.Command {
 	return &cli.Command{
-		Name:            "exec",
+		Name:            name,
 		Version:         version,
 		Usage:           "execute external commands",
 		UsageText:       usageText,
@@ -120,21 +122,21 @@ func options(c *cli.Command) []any {
 	return append(opts, boolOptions(c)...)
 }
 
-func appendString(opts []any, c *cli.Command, name string, make func(string) any) []any {
+func appendString(opts []any, c *cli.Command, name string, build func(string) any) []any {
 	if c.IsSet(name) {
-		return append(opts, make(c.String(name)))
+		return append(opts, build(c.String(name)))
 	}
 	return opts
 }
 
 func boolOptions(c *cli.Command) []any {
 	flags := []struct {
-		name string
 		opt  any
+		name string
 	}{
-		{flagUseShell, command.ExecUseShell},
-		{flagIgnoreErrors, command.ExecIgnoreErrors},
-		{flagQuiet, command.ExecQuiet},
+		{name: flagUseShell, opt: command.ExecUseShell},
+		{name: flagIgnoreErrors, opt: command.ExecIgnoreErrors},
+		{name: flagQuiet, opt: command.ExecQuiet},
 	}
 	var opts []any
 	for _, f := range flags {
