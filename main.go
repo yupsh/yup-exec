@@ -52,12 +52,42 @@ var spec = clix.Spec{
 // state into another (which IsSet reads).
 func flags() []urf.Flag {
 	return []urf.Flag{
-		&urf.StringFlag{Name: flagWorkingDir, Aliases: []string{"C"}, Usage: "run command in DIRECTORY"},
-		&urf.StringSliceFlag{Name: flagEnvVar, Aliases: []string{"e"}, Usage: "set environment variable (NAME=VALUE)"},
-		&urf.StringFlag{Name: flagShell, Usage: "shell to use for execution"},
-		&urf.BoolFlag{Name: flagUseShell, Aliases: []string{"s"}, Usage: "execute command through a shell"},
-		&urf.BoolFlag{Name: flagIgnoreErrors, Usage: "succeed even if the command exits non-zero"},
-		&urf.BoolFlag{Name: flagQuiet, Aliases: []string{"q"}, Usage: "discard the command's stderr"},
+		&urf.StringFlag{
+			Name:    flagWorkingDir,
+			Aliases: []string{"C"},
+			Usage:   "run command in DIRECTORY",
+			Sources: urf.EnvVars("YUP_EXEC_DIRECTORY"),
+			Value:   "",
+		},
+		&urf.StringSliceFlag{
+			Name:    flagEnvVar,
+			Aliases: []string{"e"},
+			Usage:   "set environment variable (NAME=VALUE)",
+			Sources: urf.EnvVars("YUP_EXEC_ENV"),
+		},
+		&urf.StringFlag{
+			Name:    flagShell,
+			Usage:   "shell to use for execution",
+			Sources: urf.EnvVars("YUP_EXEC_SHELL"),
+			Value:   "",
+		},
+		&urf.BoolFlag{
+			Name:    flagUseShell,
+			Aliases: []string{"s"},
+			Usage:   "execute command through a shell",
+			Sources: urf.EnvVars("YUP_EXEC_USE_SHELL"),
+		},
+		&urf.BoolFlag{
+			Name:    flagIgnoreErrors,
+			Usage:   "succeed even if the command exits non-zero",
+			Sources: urf.EnvVars("YUP_EXEC_IGNORE_ERRORS"),
+		},
+		&urf.BoolFlag{
+			Name:    flagQuiet,
+			Aliases: []string{"q"},
+			Usage:   "discard the command's stderr",
+			Sources: urf.EnvVars("YUP_EXEC_QUIET"),
+		},
 	}
 }
 
