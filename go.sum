@@ -2,10 +2,10 @@ github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/destel/rill v0.8.1 h1:tJTit7kljOy2i2kqP4zHG1dUA452VpMK/myYRy5SY28=
 github.com/destel/rill v0.8.1/go.mod h1:srKuXzvGqINUEGYR5b/iwvW+L9/S35RxVHWGYbXNoO4=
-github.com/gloo-foo/cli v0.1.12 h1:9ZhelPEdn0DAg/u/Xh4atR5Jx93Yo0XpObkJT+/5q0c=
-github.com/gloo-foo/cli v0.1.12/go.mod h1:ZwacdUDS38XOo2N3J2oqfpXRVQRTHarsaH8sMlYyezA=
-github.com/gloo-foo/cmd-exec v0.1.8 h1:tcaD5uYS0dEzYTbW/64J9rAssfsZDE1bKyGKdKkUb4w=
-github.com/gloo-foo/cmd-exec v0.1.8/go.mod h1:L/4kO9GcR9jv3F18ILNpu10UZR2PCQEZe4bBEpsBl7Y=
+github.com/gloo-foo/cli v0.1.14 h1:CWdvBfyQHqinORZtr5Akk8HnLSBuBiEH5YMWjvwrInI=
+github.com/gloo-foo/cli v0.1.14/go.mod h1:ZwacdUDS38XOo2N3J2oqfpXRVQRTHarsaH8sMlYyezA=
+github.com/gloo-foo/cmd-exec v0.1.11 h1:T+r1EyWJ5CWDR/+GD9p7IveOWmJH2yuf/HesiM9syAs=
+github.com/gloo-foo/cmd-exec v0.1.11/go.mod h1:EEOYRV4udtK5aGF6WpJYlX2o9h27DFu0wq1e1oY5H6Q=
 github.com/gloo-foo/framework v0.1.13 h1:DP9zUdUHWkDx/T7pxbj6npp2y8l1CjPSMQNOT4iuZSY=
 github.com/gloo-foo/framework v0.1.13/go.mod h1:ISleGZFyYKmoSvzlSR/UpZH2uRbCBuh2+Omd8z6pu28=
 github.com/gomatic/go-error v0.3.7 h1:J+zxRtyLUzRJgsaJmsRmk8JJDvrOYoJRx69V9M1Df+8=
